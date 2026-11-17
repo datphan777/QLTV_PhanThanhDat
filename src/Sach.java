@@ -1,86 +1,32 @@
-import java.time.Year;
-
 public class Sach {
-    // Yêu cầu 1: Đổi tất cả thuộc tính thành private
-    private String maSach;
-    private String tieuDe;
-    private String tacGia;
-    private int namXuatBan;
-    private int soLuong;
+    public String maSach;
+    public String ngayNhap;
+    public double donGia;
+    public int soLuong;
+    public String nhaXuatBan;
 
-    // Constructor không tham số
+    // Constructor 1: Không tham số
     public Sach() {
     }
-
-    // Yêu cầu 4: Constructor có tham số đầy đủ
-    public Sach(String maSach, String tieuDe, String tacGia, int namXuatBan, int soLuong) {
+    // Constructor 2: 3 tham số
+    public Sach(String maSach, int soLuong, double donGia) {
         this.maSach = maSach;
-        this.tieuDe = tieuDe;
-        this.tacGia = tacGia;
-        setNamXuatBan(namXuatBan); // Gọi setter để kiểm tra logic hợp lệ
-        setSoLuong(soLuong);       // Gọi setter để kiểm tra logic hợp lệ
+        this.soLuong = soLuong;
+        this.donGia = donGia;
     }
-
-    // Yêu cầu 2 & 3: Các phương thức Getter và Setter với logic kiểm tra dữ liệu
-
-    public String getMaSach() {
-        return maSach;
-    }
-
-    public void setMaSach(String maSach) {
+    // Constructor 3: Đầy đủ 5 tham số (dùng cho bài Tuần 8)
+    public Sach(String maSach, String ngayNhap, double donGia, int soLuong, String nhaXuatBan) {
         this.maSach = maSach;
+        this.ngayNhap = ngayNhap;
+        this.donGia = donGia;
+        this.soLuong = soLuong;
+        this.nhaXuatBan = nhaXuatBan;
     }
-
-    public String getTieuDe() {
-        return tieuDe;
-    }
-
-    public void setTieuDe(String tieuDe) {
-        this.tieuDe = tieuDe;
-    }
-
-    public String getTacGia() {
-        return tacGia;
-    }
-
-    public void setTacGia(String tacGia) {
-        this.tacGia = tacGia;
-    }
-
-    public int getNamXuatBan() {
-        return namXuatBan;
-    }
-
-    // Yêu cầu 3: Kiểm tra năm xuất bản > 0 và <= năm hiện tại
-    public void setNamXuatBan(int namXuatBan) {
-        int currentYear = Year.now().getValue();
-        if (namXuatBan > 0 && namXuatBan <= currentYear) {
-            this.namXuatBan = namXuatBan;
-        } else {
-            System.out.println("Lỗi: Năm xuất bản không hợp lệ (" + namXuatBan + ")");
-        }
-    }
-
-    public int getSoLuong() {
-        return soLuong;
-    }
-
-    // Yêu cầu 3: Kiểm tra số lượng không âm (>= 0)
-    public void setSoLuong(int soLuong) {
-        if (soLuong >= 0) {
-            this.soLuong = soLuong;
-        } else {
-            System.out.println("Lỗi: Số lượng không được âm (" + soLuong + ")");
-        }
-    }
-
-    // Phương thức hiển thị thông tin sách
-    public void hienThiThongTin() {
+    public void Inthongtinsach() {
         System.out.println("Ma sach: " + maSach);
-        System.out.println("Tieu de: " + tieuDe);
-        System.out.println("Tac gia: " + tacGia);
-        System.out.println("Nam xuat ban: " + namXuatBan);
+        if (ngayNhap != null) System.out.println("Ngay nhap: " + ngayNhap);
+        System.out.println("Don gia: " + donGia);
         System.out.println("So luong: " + soLuong);
-        System.out.println("-----------------------------");
+        if (nhaXuatBan != null) System.out.println("Nha xuat ban: " + nhaXuatBan);
     }
 }

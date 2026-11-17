@@ -2,22 +2,30 @@ import java.util.ArrayList;
 
 public class baitaptuan7 {
     public static void main(String[] args) {
-        // Tạo danh sách sách bằng ArrayList
         ArrayList<Sach> danhSachSach = new ArrayList<>();
 
-        // Sử dụng Constructor đầy đủ tham số (Yêu cầu 4)
-        Sach toan = new Sach("M001", "Giai tich dai cuong", "Nguyen Van A", 2023, 5);
-        Sach ly = new Sach("M002", "Vat ly dai cuong", "Tran Van B", 2022, 3);
-        Sach hoa = new Sach("M003", "Hoa dai cuong", "Le Thi C", 2024, 4);
-
+        Sach toan = new Sach();
+        toan.maSach = "M001";
+        toan.donGia = 50000.0;
+        toan.soLuong = 5;
         danhSachSach.add(toan);
+
+        Sach ly = new Sach();
+        ly.maSach = "M002";
+        ly.donGia = 40000.0;
+        ly.soLuong = 3;
         danhSachSach.add(ly);
+
+        Sach hoa = new Sach();
+        hoa.maSach = "M003";
+        hoa.donGia = 45000.0;
+        hoa.soLuong = 4;
         danhSachSach.add(hoa);
 
-        // Duyệt và in thông tin toàn bộ danh sách sách trong thư viện
-        System.out.println("=== DANH SACH CAC SACH TRONG THU VIEN ===");
+        System.out.println("DANH SACH CAC SACH TRONG THU VIEN");
         for (Sach s : danhSachSach) {
-            s.hienThiThongTin();
+            s.Inthongtinsach();
+            System.out.println("-----------------------------");
         }
     }
 }
